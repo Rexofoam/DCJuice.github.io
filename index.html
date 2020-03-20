@@ -46,7 +46,7 @@ https://templatemo.com/tm-516-known
      </section>
      <section id="home">
           <div class="row" style="height: 600px; margin-left: 10%;margin-right: 10%;">
-               <img src="images/BG2.png" style="width: 100%;">         
+               <img src="images/bg2.png" style="width: 100%;">         
           </div>
      </section>
      <!-- FEATURE -->
@@ -227,7 +227,7 @@ https://templatemo.com/tm-516-known
 
                     <div class="col-md-12 col-sm-12">
                          <div class="section-title">
-                              <h2>PROMOSI TERAKHIR !! <small>Dapatkan sekarang sebelum promosi tamat !!</small></h2>
+                              <h2>PROMOSI TERAKHIR !! <br><span style="font-size: 44px; color: purple;" id="time">30:00</span><small>minit</small></h2><br><h2><small>Dapatkan sekarang sebelum promosi tamat !!</small></h2>
                          </div>
 
                          <div class="owl-carousel owl-theme owl-courses">
@@ -393,6 +393,30 @@ https://templatemo.com/tm-516-known
      <script src="js/owl.carousel.min.js"></script>
      <script src="js/smoothscroll.js"></script>
      <script src="js/custom.js"></script>
+     <script>
+     function startTimer(duration, display) {
+         var timer = duration, minutes, seconds;
+         setInterval(function () {
+             minutes = parseInt(timer / 60, 10)
+             seconds = parseInt(timer % 60, 10);
+
+             minutes = minutes < 10 ? "0" + minutes : minutes;
+             seconds = seconds < 10 ? "0" + seconds : seconds;
+
+             display.textContent = minutes + ":" + seconds;
+
+             if (--timer < 0) {
+                 timer = duration;
+             }
+         }, 1000);
+     }
+
+     window.onload = function () {
+         var fiveMinutes = 60 * 30,
+             display = document.querySelector('#time');
+         startTimer(fiveMinutes, display);
+     };
+</script>
 
 </body>
 </html>
